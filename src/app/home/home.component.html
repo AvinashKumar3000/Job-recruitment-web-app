@@ -1,0 +1,70 @@
+
+<div style="background-color: #666666;">
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100" [ngSwitch]="login">
+				<div class="login100-form " *ngSwitchCase="true">
+					<span class="login100-form-title p-b-43">
+						Login to continue
+					</span>
+					
+					<div class="wrap-input100 " >
+						<input class="input100" #user (keyup)="username = user.value" type="text" name="username" placeholder="username">
+					</div>
+					<div class="wrap-input100 " >
+						<input class="input100" #pass (keyup)="password = pass.value" type="password" name="password" placeholder="password">
+					</div>
+					
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" (click)="auth()">
+							Login
+						</button>
+					</div>
+					<div style="text-align: center;" class="alert alert-warning alert-dismissible fade show" role="alert" *ngIf="loginfail">
+						{{ logmsg }}<strong> ! </strong> 
+					  </div>
+					
+				</div>
+				<div class="login100-form validate-form" *ngSwitchCase="false">
+					<span class="login100-form-title p-b-43">
+						choose your type
+					</span>
+					
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn mb-4" routerLink="/studentform">
+							STUDENT
+						</button>
+					</div>
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" routerLink="/companyform">
+							COMPANY
+						</button>
+					</div>
+				</div>
+
+                <div class="login100-more" style="background-image: url('assets/images/bg-01.jpg');">
+                    <nav class="navbar navbar-inverse" style="color: white;">
+                        <div class="container-fluid">
+                          <div class="navbar-header">
+                            <a class="navbar-brand" >WebSiteName</a>
+                          </div>
+                       
+                          <ul class="nav navbar-nav navbar-right btn-wrks">
+                              <li>
+                                <div class="btn btn-primary hv-btn" (click)="login=true"> login</div>
+                                <div class="btn btn-primary hv-btn" (click)="login=false" > sign up</div>
+                              </li>
+                              
+                          </ul>
+                        </div>
+                      </nav>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+</div>

@@ -1,0 +1,118 @@
+.app{
+    margin: 10px;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.search-tag{
+    width: 100%;
+    background-color: white;
+}
+.search-tag > input {
+    margin-top: 10px;
+    padding: 20px;
+    font-size: large;
+}
+
+.search-tag > i{
+    font-size: x-large;
+    float: right;
+    margin-top: -35px;
+}
+.first{
+    margin-right: 6vw;
+}
+.second{
+    margin-right: 4vw;
+}
+.heading{
+    color: blue;
+}
+.bgcl{
+    background-color: rgb(169, 231, 228);
+}
+.blk,.iblk{
+    margin: 5px;
+    min-height: 200px;
+    background-color: white;
+}
+.iblk{
+    margin-top: 10px;
+}
+.scroll{
+    height: auto;
+}
+.scroll-blk{
+    margin: 2px;
+    margin-top: 10px;
+    background-color: rgb(176, 211, 190);
+    padding: 10px;
+    height: 50px;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border: 2px solid rgba(255, 0, 0, 0);
+    border-left-color: aqua;
+}
+
+.discard{
+    margin-top: -25px;
+    float: right;
+}
+
+.block{
+    background-color:#ffffff;
+    padding: 10px;
+    margin: 5px;
+    min-height: 50px;
+    color: #5c5c5c;
+    border: 5px solid rgba(255, 0, 0, 0);
+    border-bottom-color: rgb(47, 248, 255);
+    border-radius: 10px;
+}
+
+.value{
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+.caption{
+    color: #919191;
+    margin-top: 10px;
+}
+.symbol{
+    color: deeppink;
+    float: right;
+}
+.blk-heading{
+    margin-top: 15px;
+}
+
+/* the card styling with in the rounds tag*/
+.blk-heading{
+    text-align: center
+}
+.w-f{
+    width: 100%;
+    margin-left: 20px;
+}
+.c-card > .head{
+    background-color: #dcf0ff;
+    border:2px solid grey;
+    border-bottom: none;
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    height: vh;
+    padding: 5px;
+}
+.c-card > .body{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-left: 2px solid grey;
+    border-right: 2px solid grey;
+}
+.c-card > .foot{
+    border: 2px solid blue;
+}
+.link{
+    color: blue;
+}

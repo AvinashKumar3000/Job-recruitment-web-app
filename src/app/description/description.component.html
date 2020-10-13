@@ -1,0 +1,43 @@
+<div class="inner-middle">
+    <div class="left">
+      <div class="text" [routerLink]="['../description']" routerLinkActive="active">description</div>
+      <div class="text" [routerLink]="['../process']" routerLinkActive="active">process</div>          
+    </div>
+    <div class="center">
+     <div class="para">
+       <div>
+         <strong>1.Company : </strong> {{ desc.company}} ( {{ desc.website }} )
+       </div>
+       <div>
+         <strong> 2. About: </strong> {{ desc.about}} 
+       </div>
+       <div>
+         <strong> 3. Job Role: </strong> {{ desc.jobRole}} 
+       </div>
+       <div>
+         <strong> 4. CTC offered: </strong> {{ desc.CTC.lpa}} <br>
+         - {{ desc.CTC.line1 }} <br>
+         - {{ desc.CTC.line2 }} <br>
+       </div>
+       <div>
+         <strong> 5. eligibility: </strong> {{ desc.eligibility  }} 
+       </div>  
+       <div>
+         <strong> 5. branches: </strong> {{ desc.branches  }} 
+       </div>  
+     </div>
+    </div>
+    <div class="right">
+     <input class="input" #box1 (keyup)="desc.company = box1.value" placeholder="company name" value="{{desc.company}}" > 
+     <input class="input" #box2 (keyup)="desc.website = box2.value" placeholder="website" value="{{desc.website}}" > 
+     <input class="input" #box3 (keyup)="desc.about = box3.value" placeholder="about" value="{{desc.about}}" > 
+     <input class="input" #box4 (keyup)="desc.jobRole = box4.value" placeholder="job Role" value="{{desc.jobRole}}" > 
+     <input class="input" #box5 (keyup)="desc.CTC.lpa = box5.value" placeholder="CTC offered" value="{{desc.CTC.lpa}}" > 
+     <input class="input" #box6 (keyup)="desc.CTC.line1 = box6.value" placeholder="line 1" value="{{desc.CTC.line1}}" > 
+     <input class="input" #box7 (keyup)="desc.CTC.line2 = box7.value" placeholder="line 2" value="{{desc.CTC.line2}}" > 
+     <input class="input" #box8 (keyup)="desc.eligibility = box8.value" placeholder="eligibility criteria" value="{{desc.eligibility}}" > 
+     <input class="input" #box9 (keyup)="desc.branches = box9.value" placeholder="branches" value="{{desc.branches}}" > 
+    
+   </div>
+  </div>
+ 

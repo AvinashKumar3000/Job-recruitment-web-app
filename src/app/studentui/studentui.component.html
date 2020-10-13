@@ -1,0 +1,32 @@
+<div class="app">
+  <div class="left">
+    <div class="heading">
+      dashboard
+    </div>
+    <hr class="line"/>
+    <div class="sidenav">
+      <div class="sidenav-heading">
+        Menu
+      </div>
+      <div class="nav-list">
+        <div [routerLink]="['homeStudent']" routerLinkActive="active">Home</div>
+        <div [routerLink]="['authentication']" routerLinkActive="active">Authentication</div>
+        <div [routerLink]="['yourInfo']" routerLinkActive="active">Your info</div>
+        <div [routerLink]="['jobsStudent']" routerLinkActive="active">Jobs</div>
+        <div [routerLink]="['notification']" routerLinkActive="active">Notification</div>
+      </div>
+    </div>
+  </div>
+  <div class="right">
+    <div class="top">
+      <div class="username">username</div>
+    </div>
+    <div class="main">
+      <div class="log-tag">
+        <div class="log-in">last log-in : <span>12:21:32 AM</span></div>
+        <div class="log-out">last log-out : <span>12:21:32 AM</span></div>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

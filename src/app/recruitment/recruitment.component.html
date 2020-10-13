@@ -1,0 +1,25 @@
+<div class="app">
+    <div class="top">
+      <div class="btns">
+        <span>
+          <span class="date">{{ date.toString().slice(0,15) }}</span>
+        </span>
+        <button (click)="save()">save</button>
+        <button (click)="cancel()">cancel</button>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+    <div class="bottom">
+      <span>
+        status: asdfas  
+      </span>
+    </div>
+    <div class="cube">
+      <div class="sk-folding-cube" >
+        <div class="sk-cube1 sk-cube"></div>
+        <div class="sk-cube2 sk-cube"></div>
+        <div class="sk-cube4 sk-cube"></div>
+        <div class="sk-cube3 sk-cube"></div>
+      </div>
+    </div>
+</div>

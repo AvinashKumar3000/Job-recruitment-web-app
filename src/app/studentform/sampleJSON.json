@@ -1,0 +1,60 @@
+{
+  "personal_detail": {
+    "name": "avinashkumar m",
+    "fathername": "murugan m",
+    "DOB": "23/02/1999",
+    "martial_status": "unmarried",
+    "gender": "male",
+    "language": "c,c++,java,python,r,html,css,js",
+    "address": "11/166, madathur vill, konganapuram,idappadi tk",
+    "city": "salem",
+    "pincode": 637102,
+    "state": "tamilnadu",
+    "country": "india"
+  },
+  "career_objective": "There is nothing to say about this now",
+  "education_details": {
+    "SSLC": {
+      "percentage": "85",
+      "institute_name": "Krp matric hr sec school",
+      "year": 2000
+    },
+    "HSC": {
+      "percentage": 90,
+      "institute_name": "Krp matric hr sec school",
+      "year": 2004
+    },
+    "UG": {
+      "percentage": 70,
+      "institute_name": "Bannari amman institute of technology",
+      "year": 2008
+    }
+  },
+  "project_details": {
+    "project_topic": "timetable making web app",
+    "technology_used": "react, firebase",
+    "desc": "Made a nice ui including google authentication. Where people can add the timetable schedules. and can be edited by others. people can chat in the app also."
+  },
+  "area_of_interest": "web technology, no Sql database",
+  "skills_known": "qucik learner, enthusiastic",
+  "exta_ciricular": {
+    "1": "won 1st prize in the art competition"
+  },
+  "co_ciricular": {
+    "1": "organized a competition"
+  },
+  "hobbies": "watching animated series and movies, playing retro games, reading books",
+  "internship": {
+    "1": {
+      "company_name": "blue scheme ai",
+      "duration": "4 months",
+      "desc": "I had joined as intern by online interview conducted on our college. then started working on pdf extracting project"
+    }
+  },
+  "contanct_details": {
+    "email": "avinashkumar.cs17@bitsathy.ac.in",
+    "mobile": "6379765721"
+  }
+
+
+}

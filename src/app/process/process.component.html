@@ -1,0 +1,57 @@
+<div class="inner-middle">
+    <div class="left">
+      <div class="text" [routerLink]="['../description']" routerLinkActive="active">description</div>
+      <div class="text" [routerLink]="['../process']" routerLinkActive="active">process</div>       
+    </div>
+    <div class="center">
+      <div *ngFor="let item of items; let i = index">
+        <div id="i" class="card-block" (click)="setInputObj(i)">
+          <div class="row head">
+            <span class="index">[ {{ i+1 }} ]</span> {{item.type_name}} <div class="cross" (click)="delItem(i)"><i class="fa fa-window-close" aria-hidden="true"></i></div>
+          </div>
+          <div class="row body">
+            <div class="col">
+              <div class="row topic">
+                {{item.title}} 
+              </div>
+              <div class="row-2">
+                <p>
+                  {{item.desc}}
+                </p>
+              </div>
+              <div class="row link">
+                {{item.link}}
+              </div>
+            </div>
+            <div class="col-4 panel">
+              <div class="row">
+                DATE : <span class="value"> {{item.date}} </span> <i class="fa fa-calendar symbol" aria-hidden="true"></i>
+              </div>
+              <div class="row">
+                TIME : <span class="value"> {{item.time}} </span><i class="fa fa-clock-o symbol" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- End of switch-->  
+      </div>
+      <!-- End of for--> 
+    </div> 
+    
+    <div class="right">
+      <div class="blk-input" (click)="addItem(1)"> Pre-placement talk</div>
+      <div class="blk-input" (click)="addItem(2)"> Online test</div>
+      <div class="blk-input" (click)="addItem(3)"> Group Discussion</div>
+      <div class="blk-input" (click)="addItem(4)"> Interview</div>
+      <hr>
+      <div *ngIf="items.length != 0 && inputObj != null">
+        <div class="sub-right">EDIT AREA </div>
+        <input class="input" #box1 (keyup)="inputObj.title = box1.value" placeholder="Title" value="{{inputObj.title}}" > 
+        <input class="input" #box2 (keyup)="inputObj.desc = box2.value" placeholder="Description" value="{{inputObj.desc}}" > 
+        <input class="input" #box3 (keyup)="inputObj.link = box3.value" placeholder="Link" value="{{inputObj.link}}" > 
+        <input class="input" #box4 (keyup)="inputObj.date = box4.value" placeholder="date" value="{{inputObj.date}}" > 
+        <input class="input" #box5 (keyup)="inputObj.time = box5.value" placeholder="time" value="{{inputObj.time}}" > 
+      </div>
+    </div>
+  
+  </div>

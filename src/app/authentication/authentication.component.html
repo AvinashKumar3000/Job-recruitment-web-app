@@ -1,0 +1,12 @@
+<div class="center">
+    <div class="form-signin">
+        <h1 class="h3 mb-3 font-weight-normal">CHANGE YOUR CURRENT PASSWORD HERE</h1>
+        <input #box1 (keyup)="oldPass = box1.value" type="password"  class="form-control" placeholder="old password" >
+        <input #box2 (keyup)="newPass = box2.value" type="password"  class="form-control" placeholder="new password" >
+        <input #box3 (keyup)="repeatPass = box3.value" type="password"  class="form-control" placeholder="repeat password">
+        <button class="btn btn-lg btn-primary btn-block" (click)="changePassword()" > change</button>
+        <div class="info" *ngIf='log!=""'> {{ log }}</div>
+        <p class="mt-5 mb-3 text-muted"  >Changing the password frequently is good practice.</p>
+        
+      </div>
+</div>

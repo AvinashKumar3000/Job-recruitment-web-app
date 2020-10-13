@@ -1,0 +1,39 @@
+<div class="app">
+    <div class="left">
+      <div class="heading">
+        dashboard
+      </div>
+      <hr class="line"/>
+      <div class="sidenav">
+        <div class="sidenav-heading">
+          Menu
+        </div>
+        <div class="nav-list">
+          <div class="link" [routerLink]="['homeCompany']" routerLinkActive="active">Home</div>
+          <div class="link" [routerLink]="['authentication']" routerLinkActive="active">Authentication</div>
+          <div class="link" [routerLink]="['companyYourInfo']" routerLinkActive="active">Your info</div>
+          <div class="link" routerLink="../recruitment" routerLinkActive="active">Reqruitments</div>
+          <div class="link" [routerLink]="['studentSearch']" routerLinkActive="active">Students</div>
+        </div>
+        <div class="sidenav-heading" style="margin-top: 10px;">
+          Mcqs
+        </div>
+        <div class="nav-list">
+          <div class="link" routerLink="../create-test-questions/12">New</div>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="top">
+        <div class="username" ><span>{{username}}</span></div>
+        <span class="shadow logout" (click)="logout()">LOG OUT</span>
+      </div>
+      <div class="main">
+        <div class="log-tag">
+          <div class="log-in">last log-in : <span>12:21:32 AM</span></div>
+          <div class="log-out">last log-out : <span>12:21:32 AM</span></div>
+        </div>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>

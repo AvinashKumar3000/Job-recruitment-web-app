@@ -1,0 +1,127 @@
+<div class="app">
+    <div class="form-bg" *ngIf="showEdit">
+   
+        <div class="form-container">
+            <h1 style="text-align: center;">EDIT INFORMATION</h1>
+        
+            <label for="msg"><strong> {{ key.replace('_'," ") }} </strong></label>
+            <input placeholder="Type message.." name="msg" #box (keyup)="value = box.value">      
+            <button type="button" class="btn" (click)="saveEdit()">save</button>
+            <button type="button" class="btn cancel" (click)="closeEdit()">Close</button>
+          </div>
+    </div>
+    <div class="blk">
+        <div class="button" (click)="edit()"> EDIT </div>
+        <div class="button" > SAVE </div>
+    </div>
+    <div class="row">
+        <div class="title">
+            YOUR INFORMATION
+        </div>
+    </div>
+    
+    <hr>
+    <div class="head">
+        personal details
+    </div>
+    <div *ngFor="let key of personal">
+        <div class="row table">
+            <div class="col-2">
+                <div class="shadow-lg key-pair">{{ key.replace('_'," ") }}</div>
+            </div>
+            <div class="shadow-sm col value-pair">
+                {{data.personal_detail[key]}}
+                <i *ngIf="show == true" class="fa fa-pencil" aria-hidden="true" (click)="openEdit(1,key)"></i>
+                
+
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="head">
+        Educational details
+    </div>
+    <div *ngFor="let key of education">
+        <hr>
+        <div class="head">
+            {{ key.replace('_'," ") }}
+        </div>
+        <div class="row table">
+            <div class="col-2">
+                <div class="shadow-lg key-pair"> percentage </div>
+            </div>
+            <div class="shadow-sm col value-pair">
+                {{data.education_details[key].percentage}}
+                <i *ngIf="show == true" class="fa fa-pencil" aria-hidden="true" (click)="openEdit(11,key)"></i>
+            </div>
+            <div class="col-2">
+                <div class="shadow-lg key-pair">institute name</div>
+            </div>
+            <div class="shadow-sm col value-pair">
+                {{data.education_details[key].institute_name}}
+                <i *ngIf="show == true" class="fa fa-pencil" aria-hidden="true" (click)="openEdit(12,key)"></i>
+            </div>
+            <div class="col-2">
+                <div class="shadow-lg key-pair"> year </div>
+            </div>
+            <div class="shadow-sm col value-pair">
+                {{data.education_details[key].year}}
+                <i *ngIf="show == true" class="fa fa-pencil" aria-hidden="true" (click)="openEdit(13,key)"></i>
+            </div>
+            <hr>
+            <div *ngIf="key == 'UG'" class="row table">
+                <div  class="col-2">
+                    <div class="shadow-lg key-pair"> degree </div>
+                </div>
+                <div  class="shadow-sm col value-pair">
+                    {{data.education_details[key].degree}}
+                    <i *ngIf="show == true" class="fa fa-pencil" aria-hidden="true" (click)="openEdit(14,key)"></i>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <hr>
+    <div class="head">
+        Project details
+    </div>
+    <div *ngFor="let key of project">
+        <div class="row table">
+            <div class="col-2">
+                <div class="shadow-lg key-pair">{{ key.replace('_'," ") }}</div>
+            </div>
+            <div class="shadow-sm col value-pair">
+                {{data.project_details[key]}}
+                <i *ngIf="show == true" class="fa fa-pencil" aria-hidden="true" (click)="openEdit(3,key)"></i>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="head">
+        Other details
+    </div>
+    <div *ngFor="let key of others">
+        <div class="row table">
+            <div class="col-2">
+                <div class="shadow-lg key-pair">{{ key.replace('_'," ") }}</div>
+            </div>
+            <div class="shadow-sm col value-pair">
+                {{data[key]}}
+                <i *ngIf="show == true" class="fa fa-pencil" aria-hidden="true" (click)="openEdit(4,key)"></i>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="center">
+        <div class="form-signin">
+            <h1 class="h3 mb-3 font-weight-normal">PROVIDE YOUR AUTHENDICATION DETAILS</h1>
+            <input #box1 (keyup)="username = box1.value" type="text"  class="form-control" placeholder="username" >
+            <input #box2 (keyup)="pass = box2.value" type="password"  class="form-control" placeholder="password" >
+            <input #box3 (keyup)="repeatPass = box3.value" type="password"  class="form-control" placeholder="repeat password">
+            <button class="btn btn-lg btn-primary btn-block" (click)="submit()"> submit </button>
+            <div class="info" *ngIf='log!=""'> {{ log }}</div>
+            <p class="mt-5 mb-3 text-muted"><strong style="color: red;">NOTE :</strong> The username cannot be changed once you had enterd.</p>
+            
+          </div>
+    </div>
+</div>

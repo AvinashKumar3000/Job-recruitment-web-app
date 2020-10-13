@@ -1,0 +1,91 @@
+.app{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    background-color: #f1f4f6;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:  16px;
+}
+.heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px;
+    padding-top: 30px;
+}
+/* side navingation */
+.sidenav{
+    padding-left: 13px;
+    text-transform: uppercase;
+    position: fixed;
+}
+
+.sidenav-heading{
+    color: blue;
+    margin-bottom: 20px;
+}
+.nav-list{
+    padding-left: 20px;
+}
+.nav-list > div{
+    margin: 2px;
+    padding: 5px;
+    padding-left: 13px;
+    color: #686868;
+    border-left-color: #56b6f7;
+    cursor: pointer;
+}
+.nav-list > div:hover{
+    background-color:  #def2ff;
+    color: blue;
+}
+.nav-list > div:focus{
+    outline: none;
+}
+.active{
+    color: #ffffff;
+    background-color: #def2ff;
+    
+}
+/* left top right */
+.left{
+    min-width:250px;
+    background-color: #ffffff;
+    height: 100%;
+    box-shadow: 0px -20px 10px rgba(168, 168, 168, 0.274);
+}
+.right{
+    width: 100%;
+}
+.top{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 55px;
+    background-color: #d4e8ff;
+    box-shadow: 10px -1px 12px black;
+    padding-right: 40px;
+}
+.username{
+    float:right;
+    padding-left: 50px;
+}
+
+/* logtag styling */
+.log-tag,.company-details{
+    background-color: rgb(255, 255, 255);
+}
+.log-tag{
+    margin: 10px;
+    padding: 20px;
+    padding-bottom: 40px;
+}
+.log-in{
+    float: left;
+}
+.log-out{
+    float: right;
+}

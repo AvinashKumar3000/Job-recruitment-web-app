@@ -1,0 +1,155 @@
+<div class="app">
+    <!-- header part -->
+    <div class="bg center" *ngIf="showNotification">
+        <div class="notification">
+            <div class="row center" style="height: 80%;">
+                <div class="container center" style="flex-direction: column;">
+                    <div class="p-2" style="width: 100%; text-align: center;">{{ notification }}</div>
+                    <input *ngIf="showInput" class="inputField" type="text" placeholder={{inputField}} #input (keyup)="inputvar = input.value">
+                </div>
+            </div>
+                
+            <div class="row" style="height: 20%;">
+                <div class="col center">
+                    <button class="btn btn-primary btn-noti" (click)="submitNotification()">{{ btnText }}</button>
+                </div>
+                <div class="col center">
+                    <button class="btn btn-primary btn-noti" (click)="close()">cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nav">
+        <ul class="nav-main">
+            <li (click)="navShow(0)">File
+                <ul *ngIf="nav.n0"  class="nav-sub">
+                    <li (click)="open('Enter your Id',true,'document id','create','new')">New <div>Create new file</div></li>
+                    <li (click)="open('Enter your Id',true,'document id','open','open')">Open <div>Open Existing file</div></li>
+                    <li (click)="open('Dont forget to save the document',false,'document id','exit','exit')">Exit <div>Exit to dashboard</div></li>
+                </ul>
+            </li>
+            <li (click)="navShow(1)">Doc
+                <ul *ngIf="nav.n1" class="nav-sub">
+                    <li (click)="submit()">Save <div>Save your document</div></li>
+                    <li (click)="open('Are you sure ?',false,'','ok','del')">Delete <div>Delete current document</div></li>
+                </ul>
+            </li>
+            <li (click)="navShow(2)">View
+                <ul *ngIf="nav.n2" class="nav-sub">
+                    <li (click)="showId()">Show Id  <div>To view the Doc Id</div></li>
+                    <li (click)="open('Enter your New Document Id',true,'document id','edit','edit')">Edit Id <div>To Edit the Doc Id</div></li>
+                    <li (click)="showDoc()">Documents<div>To Edit the Doc Id</div></li>
+                </ul>
+            </li>
+            <li (click)="navShow(3)">Help
+                <ul *ngIf="nav.n3" class="nav-sub">
+                    <li (click)="about()">About<div>Working of this page</div></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="shadow pan-1" (click)="hideNav()" style="display: block;">
+        <div class="heading">
+            <div class="title"> <input id="title-input" class="txt-Up" #box (keyup)="onKey(box.value)" value={{titleText}}></div>
+        </div>
+        <div class="qn-no" style="margin-left: 50px;"><strong>No of questions : </strong> {{items.length}}</div>
+    </div>
+    <!-- the right pannel-->
+    <div class="pan-2" (click)="hideNav()" style="display: block;">
+        <div class="row">
+            <div class="col">
+                <div class="blk-each-qn box mainbox" *ngFor="let item of items; let i = index">
+                    <div style="margin-left:30px;">Question {{i+1}} | type {{item.type}}</div>                 
+                    <div [ngSwitch]="item.type">
+                        <div class="box" *ngSwitchCase="1">
+                            <div class="textarea">
+                                {{ item.qn }}
+                            </div>
+                            <input id="qn{{i}}" class="qn-txt-Up" #box (keyup)="onKeyQn(box.value,i)" value="your question">
+                            <div class="options">
+                                <div class="opt"><div class="radio"></div><input id="opt{{i}}0" value="{{item.opt.opt1}}" #pt1 (keyup)="editOpt(pt1.value,i,0)" ></div>
+                                <div class="opt"><div class="radio"></div><input id="opt{{i}}1" value="{{item.opt.opt2}}" #pt2 (keyup)="editOpt(pt2.value,i,1)" ></div>
+                                <div class="opt"><div class="radio"></div><input id="opt{{i}}2" value="{{item.opt.opt3}}" #pt3 (keyup)="editOpt(pt3.value,i,2)" ></div>
+                                <div class="opt"><div class="radio"></div><input id="opt{{i}}3" value="{{item.opt.opt4}}" #pt4 (keyup)="editOpt(pt4.value,i,3)" ></div>
+                            </div>
+                            <div class="btns">
+                                <button class="btn btn-primary" (click)="delQn(i)">cancel</button>
+                                <button class="btn btn-primary" (click)="reset(i)">reset</button>
+                            </div>
+                        </div>
+                        <div class="box" *ngSwitchCase="2">
+                            <div class="textarea">
+                                {{ item.qn }}
+                            </div>
+                            <input id="qn{{i}}" class="qn-txt-Up" #box (keyup)="onKeyQn(box.value,i)" value="your question">
+                            <div class="container">
+                                The ans will be taken as text
+                            </div>
+                            <div class="btns">
+                                <button class="btn btn-primary" (click)="delQn(i)">cancel</button>
+                                <button class="btn btn-primary" (click)="reset(i)">reset</button>
+                            </div>
+                        </div>
+                        <div class="box" *ngSwitchCase="3">
+                            <div class="textarea">
+                                {{ item.qn }}
+                            </div>
+                            <input id="qn{{i}}" class="qn-txt-Up" #box (keyup)="onKeyQn(box.value,i)" value="your question">
+                            
+                            <div class="options">
+                                <div class="opt"><div class="check-box"></div><input id="opt{{i}}0" value="{{item.opt.opt1}}" #ptd1 (keyup)="editOpt(ptd1.value,i,0)" ></div>
+                                <div class="opt"><div class="check-box"></div><input id="opt{{i}}1" value="{{item.opt.opt2}}" #ptd2 (keyup)="editOpt(ptd2.value,i,1)" ></div>
+                                <div class="opt"><div class="check-box"></div><input id="opt{{i}}2" value="{{item.opt.opt3}}" #ptd3 (keyup)="editOpt(ptd3.value,i,2)" ></div>
+                                <div class="opt"><div class="check-box"></div><input id="opt{{i}}3" value="{{item.opt.opt4}}" #ptd4 (keyup)="editOpt(ptd4.value,i,3)" ></div>
+                            </div>
+                            
+                            
+                            <div class="btns">
+                                <button class="btn btn-primary" (click)="delQn(i)">cancel</button>
+                                <button class="btn btn-primary" (click)="reset(i)">reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 right">
+                <div class="blk-1">
+                    <div class="row" style="text-align: center;width: 100%;">
+                            QUESTIONS TYPES
+                   </div>
+                </div>
+                <div class="blk-2">
+                    <div class="row qn-type">
+                        <span class="col">Questions with <strong>4 options</strong></span>
+                        <div class="col"><button class="add-btn btn btn-primary"  (click)="addQn(1)">ADD</button></div>
+                    </div>
+                </div>
+                <div class="blk-2">
+                    <div class="row qn-type">
+                        <span class="col">Questions with <strong>no options</strong></span>
+                        <div class="col"><button class="add-btn btn btn-primary" (click)="addQn(2)">ADD</button></div>
+                    </div>
+                </div>
+                <div class="blk-2">
+                    <div class="row qn-type">
+                        <span class="col">Questions with <strong>check box</strong></span>
+                        <div class="col"><button class="add-btn btn btn-primary" (click)="addQn(3)">ADD</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pan-3" (click)="hideNav()" style="display: block;">
+        <!-- footer part -->
+        <div class="footer">
+                <h5 class="text-uppercase heading">About this page</h5>
+                <p>You can edit the option over itself. The 3 category of questions can be added. 
+                Most the text is inplace editable. So you can edit the text by clicking over itself.
+                </p>
+                <hr class="clearfix w-100 d-md-none pb-3">
+        </div>
+           
+        <!-- Footer -->
+    </div>
+</div>  
+  

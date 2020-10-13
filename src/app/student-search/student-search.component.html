@@ -1,0 +1,100 @@
+<div class="app">
+    <div class="center form-signin">
+        <h1 class="h3 mb-3 font-weight-normal">SEARCH FOR STUDENT</h1>
+        <input #box (keyup)="input = box.value" type="text"  class="form-control" placeholder="student username" >
+        <button class="btn btn-lg btn-primary btn-block" (click)="search()" > search </button>
+        <div class="info" *ngIf='log!=""'> {{ log }}</div>
+    </div>
+    <!-- the student data -->
+<div>   
+    <hr>
+    <div class="head">
+        personal details
+    </div>
+    <div *ngFor="let key of personal">
+        <div class="row table">
+            <div class="col-2">
+                <div class="shadow-lg key-pair">{{ key.replace('_'," ") }}</div>
+            </div>
+            <div class="shadow-sm col value-pair">
+                {{data.personal_detail[key]}}
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="head">
+        Educational details
+    </div>
+    <div *ngFor="let key of education">
+        <hr>
+        <div class="head">
+            {{ key.replace('_'," ") }}
+        </div>
+        <div class="row table">
+            <div class="col-2">
+                <div class="shadow-lg key-pair"> percentage </div>
+            </div>
+            <div class="shadow-sm col value-pair">
+                {{data.education_details[key].percentage}}
+            </div>
+            <div class="col-2">
+                <div class="shadow-lg key-pair">institute name</div>
+            </div>
+            <div class="shadow-sm col value-pair">
+                {{data.education_details[key].institute_name}}
+
+            </div>
+            <div class="col-2">
+                <div class="shadow-lg key-pair"> year </div>
+            </div>
+            <div class="shadow-sm col value-pair">
+                {{data.education_details[key].year}}
+
+            </div>
+            <hr>
+            <div *ngIf="key == 'UG'" class="row table">
+                <div  class="col-2">
+                    <div class="shadow-lg key-pair"> degree </div>
+                </div>
+                <div  class="shadow-sm col value-pair">
+                    {{data.education_details[key].degree}}
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <hr>
+    <div class="head">
+        Project details
+    </div>
+    <div *ngFor="let key of project">
+        <div class="row table">
+            <div class="col-2">
+                <div class="shadow-lg key-pair">{{ key.replace('_'," ") }}</div>
+            </div>
+            <div class="shadow-sm col value-pair">
+                {{data.project_details[key]}}
+
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="head">
+        Other details
+    </div>
+    <div *ngFor="let key of others">
+        <div class="row table">
+            <div class="col-2">
+                <div class="shadow-lg key-pair">{{ key.replace('_'," ") }}</div>
+            </div>
+            <div class="shadow-sm col value-pair">
+                {{data[key]}}
+
+            </div>
+        </div>
+    </div>
+   
+</div>
+
+    <!-- the end -->
+</div>

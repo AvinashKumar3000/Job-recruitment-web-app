@@ -1,0 +1,40 @@
+<div class="app">
+    <div class="form-bg" *ngIf="showEdit">
+   
+        <div class="form-container">
+            <h1 style="text-align: center;">EDIT INFORMATION</h1>
+        
+            <label for="msg"><strong> Name </strong></label>
+            <input placeholder="Type message.." name="msg" #box (keyup)="value = box.value">      
+            <button type="button" class="btn" (click)="saveEdit()">save</button>
+            <button type="button" class="btn cancel" (click)="closeEdit()">Close</button>
+          </div>
+    </div>
+    <div class="blk">
+        <div class="button" (click)="edit()"> EDIT </div>
+        <div class="button" (click)="saveData()"> SAVE </div>
+    </div>
+    <div class="row">
+        <div class="title">
+            YOUR INFORMATION
+        </div>
+    </div>
+    
+    <hr>
+    <div class="head">
+        company details
+    </div>
+    <div *ngFor="let key of personal">
+        <div class="row table">
+            <div class="col-2">
+                <div class="shadow-lg key-pair">{{ key }}</div>
+            </div>
+            <div class="shadow-sm col value-pair">
+                {{data[key]}}
+                <i *ngIf="show == true" class="fa fa-pencil" aria-hidden="true" (click)="openEdit(key)"></i>
+                
+
+            </div>
+        </div>
+    </div>    
+</div>

@@ -1,0 +1,97 @@
+.app{
+    background-color: #f1f4f6;
+    height: 100%;
+}
+.block,.main-block,.side-block{
+    background-color:#ffffff;
+    padding: 10px;
+    margin: 5px;
+    min-height: 50px;
+    color: #5c5c5c;
+    border: 5px solid rgba(255, 0, 0, 0);
+    border-bottom-color: rgb(47, 248, 255);
+    border-radius: 10px;
+}
+.main-block{
+    height:330px;
+    overflow-y: scroll;
+}
+.value{
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+.caption{
+    color: #919191;
+    margin-top: 10px;
+}
+.time{
+    float: right;
+    color: lightsalmon;
+}
+.symbol{
+    color: deeppink;
+    float: right;
+}
+.title{
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: crimson;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.pair{
+    margin-top: 5px;
+}
+.key-pair,.value-pair{
+    background-color: aquamarine;
+}
+.key-pair{
+    color: brown;
+}
+.value-pair{
+    color: #919191;
+    text-align: end;
+    border:2px solid rgba(161, 52, 52, 0);
+    border-left-color: #00ccff;
+}
+.msg{
+    cursor: pointer;
+    margin:10px;
+    padding: 10px;
+    background-color: rgb(255, 239, 219);
+    border-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border: 2px solid rgba(0, 0, 0, 0);
+    border-right-color: #00ccff;    
+}
+.msg:hover{
+    background-color: rgb(222, 255, 219);
+    border-right-color: #ff00dd;    
+    border-width: 3px;
+}
+.logo{
+    border-radius: 50%;
+    background-color: black;
+    margin-right: 15px;
+}
+.logo > span{
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 900;
+}
+.msg-username{
+    color: darkorange;
+    font-weight: 600;
+    margin-left: -15px;
+}
+.row > p{
+    margin-left: 20px;
+}
